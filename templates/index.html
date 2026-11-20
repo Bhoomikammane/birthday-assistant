@@ -7,51 +7,35 @@
 
     <title>Birthday Buddy 🎂</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- Floating Background Emojis -->
+    <!-- Floating Birthday Emojis -->
     <div class="floating-emoji">🎈</div>
     <div class="floating-emoji">🎂</div>
     <div class="floating-emoji">🎉</div>
-    <div class="floating-emoji">✨</div>
     <div class="floating-emoji">🎁</div>
-    <div class="floating-emoji">💗</div>
+    <div class="floating-emoji">✨</div>
+    <div class="floating-emoji">🎀</div>
 
-
-    <!-- Main Container -->
     <div class="main-container">
 
         <!-- Header -->
         <header class="header">
 
-            <div class="logo">🎂</div>
-
-            <h1>Birthday Buddy</h1>
-
-            <p>
-                Your little assistant for remembering big celebrations! 💖
-            </p>
-
-            <!-- Birthday Decorations Instead of GIF -->
-            <div class="birthday-decoration">
-                <span>🎈</span>
-                <span>🎉</span>
-                <span>🎁</span>
-                <span>✨</span>
-                <span>🎊</span>
+            <div class="logo">
+                🎂 Birthday Buddy
             </div>
 
-            <!-- Online Status -->
+            <p class="birthday-decoration">
+                Your little assistant for remembering special days! 💗
+            </p>
+
             <div class="status">
-                <span class="online-dot"></span>
+                <span class="status-dot"></span>
                 Your Birthday Assistant is Online
             </div>
 
@@ -59,25 +43,25 @@
 
 
         <!-- Chat Card -->
-        <main class="chat-card">
+        <div class="chat-card">
 
-            <!-- Chat Heading -->
             <div class="chat-heading">
 
-                <span>💌</span>
-
                 <div>
-                    <h2>Let's Celebrate!</h2>
-                    <p>Ask me anything about birthdays 🎈</p>
+                    <h2>Let's Chat! 💬</h2>
+                    <p>Ask me about upcoming birthdays.</p>
+                </div>
+
+                <div class="chat-icon">
+                    🎀
                 </div>
 
             </div>
 
 
             <!-- Chat Messages -->
-            <div id="chat-box" class="chat-box">
+            <div id="chat-box">
 
-                <!-- Welcome Message -->
                 <div class="message bot-message">
 
                     <div class="avatar">🎂</div>
@@ -85,23 +69,15 @@
                     <div class="message-content">
 
                         <p>
-                            Hey there! 👋💗
-
-                            <br><br>
-
-                            Welcome to Birthday Buddy! 🎉
-
-                            <br>
-
-                            I can help you remember birthdays,
-                            find upcoming celebrations and more!
-
-                            <br><br>
-
-                            What would you like to know? 🎁
+                            Hey there! 💕 Welcome to Birthday Buddy!
                         </p>
 
-                        <span class="time">Just now</span>
+                        <p>
+                            I can help you remember birthdays,
+                            find upcoming celebrations and more! 🎉
+                        </p>
+
+                        <span class="message-time">Just now</span>
 
                     </div>
 
@@ -113,30 +89,34 @@
             <!-- Quick Questions -->
             <div class="quick-questions">
 
-                <p>✨ Try asking:</p>
+                <p>✨ Try asking me:</p>
 
                 <button onclick="sendQuickMessage('What are the upcoming birthdays?')">
                     🎂 Upcoming birthdays
                 </button>
 
                 <button onclick="sendQuickMessage('Is there any birthday tomorrow?')">
-                    🎈 Tomorrow's birthdays
+                    📅 Birthday tomorrow
                 </button>
 
                 <button onclick="sendQuickMessage('How many birthdays are there next month?')">
-                    🎁 Next month's birthdays
+                    🎉 Next month count
+                </button>
+
+                <button onclick="sendQuickMessage('Any nephew birthdays in September?')">
+                    💗 Nephew birthdays
                 </button>
 
             </div>
 
 
-            <!-- Message Input -->
+            <!-- Input Area -->
             <div class="input-area">
 
                 <input
                     type="text"
                     id="user-input"
-                    placeholder="Type your birthday question... 💬"
+                    placeholder="Type your birthday question here... 💬"
                     autocomplete="off"
                 >
 
@@ -147,17 +127,36 @@
             </div>
 
 
-            <!-- Footer -->
-            <div class="footer">
-                Made with 💗 for all your special moments!
+            <!-- Reset Conversation -->
+            <div class="reset-area">
+
+                <button id="reset-btn" onclick="resetConversation()">
+                    🔄 Reset Conversation
+                </button>
+
+                <p>
+                    Start a fresh conversation whenever you want! 💕
+                </p>
+
             </div>
 
-        </main>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+
+            Made with 💗 for all your special moments!
+
+            <br>
+
+            <span>Never miss a birthday again! 🎂</span>
+
+        </footer>
 
     </div>
 
 
-    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='chat.js') }}"></script>
 
 </body>
