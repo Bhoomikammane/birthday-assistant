@@ -1,0 +1,663 @@
+/* ==============================
+   GENERAL STYLING
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ffe0ec,
+        #e9d5ff,
+        #dbeafe
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   FLOATING BACKGROUND EMOJIS
+============================== */
+
+.floating-emoji {
+    position: fixed;
+
+    font-size: 35px;
+
+    animation: float 6s infinite ease-in-out;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+.floating-emoji:nth-child(1) {
+    top: 10%;
+    left: 8%;
+}
+
+.floating-emoji:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.floating-emoji:nth-child(3) {
+    bottom: 15%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.floating-emoji:nth-child(4) {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.floating-emoji:nth-child(5) {
+    top: 50%;
+    left: 3%;
+    animation-delay: 1.5s;
+}
+
+.floating-emoji:nth-child(6) {
+    top: 70%;
+    right: 4%;
+    animation-delay: 2.5s;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+.main-container {
+    width: 100%;
+
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 55px;
+
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+.header h1 {
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ec4899,
+        #9333ea
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.header > p {
+
+    color: #76536f;
+
+    font-size: 15px;
+
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   BIRTHDAY DECORATIONS
+============================== */
+
+.birthday-decoration {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin: 15px 0;
+}
+
+.birthday-decoration span {
+
+    font-size: 35px;
+
+    display: inline-block;
+
+    animation: birthdayFloat 2s ease-in-out infinite;
+}
+
+.birthday-decoration span:nth-child(even) {
+
+    animation-delay: 0.5s;
+}
+
+.birthday-decoration span:nth-child(3) {
+
+    animation-delay: 1s;
+}
+
+@keyframes birthdayFloat {
+
+    0%, 100% {
+
+        transform: translateY(0) rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px) rotate(8deg);
+
+    }
+
+}
+
+
+/* ==============================
+   ONLINE STATUS
+============================== */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: white;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    color: #7c3aed;
+
+    box-shadow: 0 4px 15px rgba(150, 70, 160, 0.1);
+}
+
+.online-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+}
+
+
+/* ==============================
+   CHAT CARD
+============================== */
+
+.chat-card {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow: 0 15px 45px rgba(125, 70, 150, 0.15);
+
+    border: 1px solid white;
+}
+
+
+/* ==============================
+   CHAT HEADING
+============================== */
+
+.chat-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #f3e8ff;
+
+    padding-bottom: 18px;
+}
+
+.chat-heading > span {
+
+    font-size: 35px;
+}
+
+.chat-heading h2 {
+
+    color: #9333ea;
+
+    font-size: 19px;
+}
+
+.chat-heading p {
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   CHAT BOX
+============================== */
+
+.chat-box {
+
+    height: 350px;
+
+    overflow-y: auto;
+
+    padding: 20px 5px;
+
+    scroll-behavior: smooth;
+}
+
+
+/* ==============================
+   CHAT MESSAGES
+============================== */
+
+.message {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.avatar {
+
+    min-width: 38px;
+
+    height: 38px;
+
+    background: #fce7f3;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.message-content {
+
+    max-width: 80%;
+
+    padding: 13px 17px;
+
+    border-radius: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* Bot Message */
+
+.bot-message .message-content {
+
+    background: #fdf2f8;
+
+    color: #66334f;
+
+    border-top-left-radius: 4px;
+}
+
+
+/* User Message */
+
+.user-message {
+
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+
+    background: linear-gradient(
+        135deg,
+        #ec4899,
+        #a855f7
+    );
+
+    color: white;
+
+    border-top-right-radius: 4px;
+}
+
+
+/* Message Time */
+
+.time {
+
+    display: block;
+
+    font-size: 10px;
+
+    opacity: 0.6;
+
+    margin-top: 7px;
+}
+
+
+/* ==============================
+   QUICK QUESTIONS
+============================== */
+
+.quick-questions {
+
+    padding: 15px 0;
+
+    border-top: 1px solid #f3e8ff;
+}
+
+.quick-questions p {
+
+    font-size: 12px;
+
+    color: #9333ea;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.quick-questions button {
+
+    background: #fff1f7;
+
+    color: #c02675;
+
+    border: 1px solid #fbcfe8;
+
+    border-radius: 20px;
+
+    padding: 8px 13px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    margin: 4px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.quick-questions button:hover {
+
+    background: #ec4899;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(236, 72, 153, 0.2);
+}
+
+
+/* ==============================
+   MESSAGE INPUT
+============================== */
+
+.input-area {
+
+    display: flex;
+
+    gap: 10px;
+
+    background: #faf5ff;
+
+    padding: 8px;
+
+    border-radius: 35px;
+
+    border: 1px solid #e9d5ff;
+}
+
+.input-area input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 10px 15px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    min-width: 0;
+}
+
+.input-area input::placeholder {
+
+    color: #b69ab9;
+}
+
+.input-area button {
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 11px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #ec4899,
+        #9333ea
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.input-area button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 5px 15px #e9a8d0;
+}
+
+
+/* ==============================
+   TYPING ANIMATION
+============================== */
+
+.typing {
+
+    font-size: 12px;
+
+    color: #a855f7;
+
+    padding: 10px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #b47ba3;
+
+    margin-top: 18px;
+}
+
+
+/* ==============================
+   SCROLLBAR
+============================== */
+
+.chat-box::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+
+    background: #e9a8d0;
+
+    border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+
+    background: #fff1f7;
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVENESS
+============================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+
+        font-size: 30px;
+    }
+
+    .header > p {
+
+        font-size: 12px;
+    }
+
+    .chat-card {
+
+        padding: 15px;
+    }
+
+    .chat-box {
+
+        height: 380px;
+    }
+
+    .birthday-decoration {
+
+        gap: 15px;
+    }
+
+    .birthday-decoration span {
+
+        font-size: 27px;
+    }
+
+    .input-area button {
+
+        padding: 10px 15px;
+
+        font-size: 11px;
+    }
+
+    .floating-emoji {
+
+        font-size: 22px;
+    }
+
+}

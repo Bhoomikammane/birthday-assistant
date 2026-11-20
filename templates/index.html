@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Buddy 🎂</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Floating Background Emojis -->
+    <div class="floating-emoji">🎈</div>
+    <div class="floating-emoji">🎂</div>
+    <div class="floating-emoji">🎉</div>
+    <div class="floating-emoji">✨</div>
+    <div class="floating-emoji">🎁</div>
+    <div class="floating-emoji">💗</div>
+
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="logo">🎂</div>
+
+            <h1>Birthday Buddy</h1>
+
+            <p>
+                Your little assistant for remembering big celebrations! 💖
+            </p>
+
+            <!-- Birthday Decorations Instead of GIF -->
+            <div class="birthday-decoration">
+                <span>🎈</span>
+                <span>🎉</span>
+                <span>🎁</span>
+                <span>✨</span>
+                <span>🎊</span>
+            </div>
+
+            <!-- Online Status -->
+            <div class="status">
+                <span class="online-dot"></span>
+                Your Birthday Assistant is Online
+            </div>
+
+        </header>
+
+
+        <!-- Chat Card -->
+        <main class="chat-card">
+
+            <!-- Chat Heading -->
+            <div class="chat-heading">
+
+                <span>💌</span>
+
+                <div>
+                    <h2>Let's Celebrate!</h2>
+                    <p>Ask me anything about birthdays 🎈</p>
+                </div>
+
+            </div>
+
+
+            <!-- Chat Messages -->
+            <div id="chat-box" class="chat-box">
+
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+
+                    <div class="avatar">🎂</div>
+
+                    <div class="message-content">
+
+                        <p>
+                            Hey there! 👋💗
+
+                            <br><br>
+
+                            Welcome to Birthday Buddy! 🎉
+
+                            <br>
+
+                            I can help you remember birthdays,
+                            find upcoming celebrations and more!
+
+                            <br><br>
+
+                            What would you like to know? 🎁
+                        </p>
+
+                        <span class="time">Just now</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Questions -->
+            <div class="quick-questions">
+
+                <p>✨ Try asking:</p>
+
+                <button onclick="sendQuickMessage('What are the upcoming birthdays?')">
+                    🎂 Upcoming birthdays
+                </button>
+
+                <button onclick="sendQuickMessage('Is there any birthday tomorrow?')">
+                    🎈 Tomorrow's birthdays
+                </button>
+
+                <button onclick="sendQuickMessage('How many birthdays are there next month?')">
+                    🎁 Next month's birthdays
+                </button>
+
+            </div>
+
+
+            <!-- Message Input -->
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Type your birthday question... 💬"
+                    autocomplete="off"
+                >
+
+                <button id="send-btn" onclick="sendMessage()">
+                    Send 💌
+                </button>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="footer">
+                Made with 💗 for all your special moments!
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+
+</body>
+
+</html>
